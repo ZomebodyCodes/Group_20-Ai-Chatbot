@@ -14,3 +14,4 @@
 | Brother | Olaf II of Norway (half-brother) |
 | Wife | Elisiv of Kyiv |
 
+**Hardrada** commonly translated as "Hard Ruler" or "Harsh Ruler", so he gained reputation as a forceful & uncompromising leader. 
