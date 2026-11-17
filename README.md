@@ -1,6 +1,6 @@
 # Group_20-Ai-Chatbot
 
-Most likely historical figure: Harald Hardrada
+Most likely historical figure: Harald Hardrada                                                 ![harald](harald3.webp) 
 
 | Name | Role |
 | --- | --- |
