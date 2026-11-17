@@ -34,3 +34,17 @@
 | Invasion of England | 1066 | Attempted to claim the English throne |
 | Battle of Fulford | 1066 | Defeated the English forces lead by the northern earls |
 | Battle of Stamford Bridge | 1066 | Was killed during the battle | 
+
+
+## Invasion of England and his death
+
+- In 1066, Harald invaded England alongside Tostig Godwinson, the exiled brother of King Harold Godwinson.
+- Harald believed he had a legitimate claim to the English throne, partly through an agreement associated with the earlier Norwegian king Magnus the Good.
+- Initially, the invasion was successful:
+- Harald defeated the northern English forces at the Battle of Fulford on 20 September 1066.
+- He then marched towards York.
+- However, King Harold Godwinson rapidly marched north to confront him.
+- On 25 September 1066, the two armies met at the Battle of Stamford Bridge.
+- Harald was killed during the battle, reportedly struck in the throat by an arrow, although accounts of the exact circumstances vary.
+- His defeat marked the end of the major Norwegian attempt to conquer England.
+- Interestingly, King Harold Godwinson himself was killed just weeks later at the Battle of Hastings, fighting William the Conqueror
