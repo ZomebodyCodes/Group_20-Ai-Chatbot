@@ -2,9 +2,9 @@
 
 Most likely historical figure: Harald Hardrada
 
-|       Name        |      Role         |
-| ----------------- | ----------------- |
-| Sergey Soldatkin  |                   |
-| Morgan Hart       |                   |
-| Edward James      |                   |
-| Toby Sims-Duff    |                   |
+| Name | Role |
+| --- | --- |
+| Sergey Soldatkin |      |
+| Morgan Hart |           |
+| Edward James |          |
+| Toby Sims-Duff |        |
