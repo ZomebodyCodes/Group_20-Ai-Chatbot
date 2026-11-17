@@ -38,13 +38,28 @@
 
 ## Invasion of England and his death
 
-- In 1066, Harald invaded England alongside Tostig Godwinson, the exiled brother of King Harold Godwinson.
-- Harald believed he had a legitimate claim to the English throne, partly through an agreement associated with the earlier Norwegian king Magnus the Good.
-- Initially, the invasion was successful:
-- Harald defeated the northern English forces at the Battle of Fulford on 20 September 1066.
-- He then marched towards York.
-- However, King Harold Godwinson rapidly marched north to confront him.
-- On 25 September 1066, the two armies met at the Battle of Stamford Bridge.
-- Harald was killed during the battle, reportedly struck in the throat by an arrow, although accounts of the exact circumstances vary.
+- In 1066, Harald invaded England alongside Tostig Godwinson, the exiled brother of King Harold Godwinson
+- Harald believed he had a legitimate claim to the English throne, partly through an agreement associated with the earlier Norwegian king Magnus the Good
+- Initially, the invasion was successful
+- Harald defeated the northern English forces at the Battle of Fulford on 20 September 1066
+- He then marched towards York
+- However, King Harold Godwinson rapidly marched north to confront him
+- On 25 September 1066, the two armies met at the Battle of Stamford Bridge
+- Harald was killed during the battle, reportedly struck in the throat by an arrow, although accounts of the exact circumstances vary
 - His defeat marked the end of the major Norwegian attempt to conquer England.
 - Interestingly, King Harold Godwinson himself was killed just weeks later at the Battle of Hastings, fighting William the Conqueror
+
+
+## Legacy
+
+- Harald is remembered as one of Norway's most famous medieval kings.
+- His reign helped strengthen the Norwegian monarchy.
+- He is often considered one of the last great Viking Age warrior-kings.
+- His death at Stamford Bridge is traditionally associated with the end of the Viking Age, although this is a historical convention rather than a precise endpoint.
+- He earned a reputation as an ambitious, experienced and formidable military leader.
+
+
+## Potential sources
+
+- [english-heritage](https://www.english-heritage.org.uk/learn/histories/1066-and-the-norman-conquest/northern-battles-1066) 
+- [vikingeskibsmuseet](https://www.vikingeskibsmuseet.dk/en/professions/education/viking-age-people/historical-characters/harald-hardrada-of-norway?)
