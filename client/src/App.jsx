@@ -1,122 +1,112 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const initialGreeting =
+    "Sit, traveler. The night is cold, but the fire is eager and the story is long. State your name, and ask what you will of my years in Byzantium, the wars I have fought, or the kingdoms I have ruled.";
+
+  const [fullText, setFullText] = useState(initialGreeting);
+  const [displayedText, setDisplayedText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+  const [inputValue, setInputValue] = useState('');
+
+  const quickPrompts = [
+    "ᛟ Tell me of the Varangian Guard",
+    "ᛉ Why call you 'The Hard Ruler'?",
+    "ᛏ What of the English throne?"
+  ];
+
+  // Typewriter effect triggered whenever fullText changes
+  useEffect(() => {
+    setDisplayedText('');
+    setIsTyping(true);
+    let index = 0;
+
+    const timer = setInterval(() => {
+      index += 1;
+      setDisplayedText(fullText.slice(0, index));
+
+      if (index >= fullText.length) {
+        clearInterval(timer);
+        setIsTyping(false);
+      }
+    }, 32); // Typing speed in milliseconds
+
+    return () => clearInterval(timer);
+  }, [fullText]);
+
+  // Allow clicking the text to instantly finish typing
+  const handleSkipTypewriter = () => {
+    if (isTyping) {
+      setDisplayedText(fullText);
+      setIsTyping(false);
+    }
+  };
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    if (!inputValue.trim()) return;
+
+    // Temporary placeholder response until connected to your JSON backend
+    setFullText(`You ask of "${inputValue}"... Stir the embers, and let me recall those bloody days.`);
+    setInputValue('');
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="pov-container">
+      <img
+        src="/campfire-bg.png"
+        alt="Sitting across from Harald Hardrada at a crackling campfire"
+        className="bg-image"
+      />
 
-      <div className="ticks"></div>
+      <div className="shadow-overlay" />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <div className="hud-content">
+        <header className="clan-header">
+          <h1>Harald Hardrada</h1>
+          <p>ᛟ King of Norway • AD 1066 ᛟ</p>
+        </header>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <div className="dialogue-stage">
+          <div className="dialogue-stream" onClick={handleSkipTypewriter}>
+            <div className="npc-name">Harald</div>
+            <p className="dialogue-text">
+              "{displayedText}"
+              {isTyping && <span className="rune-cursor">ᛉ</span>}
+            </p>
+          </div>
+
+          <div className="interaction-area">
+            <form onSubmit={handleSend} className="chat-input-line">
+              <input
+                type="text"
+                placeholder="Speak into the firelight..."
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+              />
+              <button type="submit" className="send-btn">
+                Speak ᛉ
+              </button>
+            </form>
+
+            <div className="options-row">
+              {quickPrompts.map((prompt, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className="option-btn"
+                  onClick={() => setInputValue(prompt.replace(/^[^\w]+/, ''))}
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
