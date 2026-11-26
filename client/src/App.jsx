@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 function App() {
@@ -9,12 +9,51 @@ function App() {
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
   const [inputValue, setInputValue] = useState('');
+  const [bgImage, setBgImage] = useState('/campfire-bg.png');
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const audioRef = useRef(null);
 
   const quickPrompts = [
-    "ᛟ Tell me of the Varangian Guard",
-    "ᛉ Why call you 'The Hard Ruler'?",
-    "ᛏ What of the English throne?"
+    "ᛟ Tell me of your conquests",
+    "✝ What is your faith?",
+    "ᛏ Speak of Viking life"
   ];
+
+  // Set default volume and start loop on first user interaction (bypasses browser autoplay block)
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = 0.35; // Keep ambient music subtle behind the text
+
+    const startAudioOnInteract = () => {
+      audio.play()
+        .then(() => {
+          setIsPlaying(true);
+          window.removeEventListener('pointerdown', startAudioOnInteract);
+        })
+        .catch(() => {
+          // Browser still waiting for a direct click
+        });
+    };
+
+    window.addEventListener('pointerdown', startAudioOnInteract);
+    return () => window.removeEventListener('pointerdown', startAudioOnInteract);
+  }, []);
+
+  const toggleAudio = (e) => {
+    e.stopPropagation();
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      audio.play();
+      setIsPlaying(true);
+    }
+  };
 
   // Typewriter effect triggered whenever fullText changes
   useEffect(() => {
@@ -30,12 +69,11 @@ function App() {
         clearInterval(timer);
         setIsTyping(false);
       }
-    }, 32); // Typing speed in milliseconds
+    }, 32);
 
     return () => clearInterval(timer);
   }, [fullText]);
 
-  // Allow clicking the text to instantly finish typing
   const handleSkipTypewriter = () => {
     if (isTyping) {
       setDisplayedText(fullText);
@@ -43,19 +81,48 @@ function App() {
     }
   };
 
-  const handleSend = (e) => {
+  const handleSend = async (e) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
 
-    // Temporary placeholder response until connected to your JSON backend
-    setFullText(`You ask of "${inputValue}"... Stir the embers, and let me recall those bloody days.`);
+    const userMessage = inputValue;
     setInputValue('');
+
+    const topicBackgrounds = {
+      greeting: '/campfire-warm.png',
+      viking_culture_daily_life: '/campfire-warm.png',
+      varangian_conquests: '/campfire-fierce.png',
+      norway_denmark_conquests: '/campfire-fierce.png',
+      england_stamford_bridge: '/campfire-fierce.png',
+      stiklestad_exile: '/campfire-fierce.png',
+      christianity: '/campfire-bg.png',
+      fallback: '/campfire-bg.png',
+    };
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMessage }),
+      });
+
+      const data = await response.json();
+      setBgImage(topicBackgrounds[data.matchedTopic] || '/campfire-bg.png');
+      setFullText(data.reply || "The fire crackles, yet no words come.");
+    } catch (error) {
+      console.error('Error talking to server:', error);
+      setBgImage('/campfire-bg.png');
+      setFullText("The spirits are silent... (Make sure the Express server is running on port 5000)");
+    }
   };
 
   return (
     <div className="pov-container">
+      {/* Looping Ambient Audio */}
+      <audio ref={audioRef} src="/campfire-ambience.mp3" loop preload="auto" />
+
       <img
-        src="/campfire-bg.png"
+        src={bgImage}
         alt="Sitting across from Harald Hardrada at a crackling campfire"
         className="bg-image"
       />
@@ -64,6 +131,14 @@ function App() {
 
       <div className="hud-content">
         <header className="clan-header">
+          <button
+            type="button"
+            className="audio-toggle-btn"
+            onClick={toggleAudio}
+            title={isPlaying ? "Silence the fire" : "Hear the fire"}
+          >
+            {isPlaying ? "ᛟ Sound: On" : "ᛟ Sound: Off"}
+          </button>
           <h1>Harald Hardrada</h1>
           <p>ᛟ King of Norway • AD 1066 ᛟ</p>
         </header>

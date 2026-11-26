@@ -1,15 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Uncial+Antiqua&display=swap');
+@font-face {
+  font-family: 'Norse';
+  src: url('/fonts/Norse.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Norse';
+  src: url('/fonts/NorseBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Norse', sans-serif !important;
 }
 
 body {
-  font-family: 'Uncial Antiqua', cursive, serif;
   background-color: #0c0806;
   color: #f1ebd9;
   overflow: hidden;
   height: 100vh;
+  letter-spacing: 0.08em;
 }

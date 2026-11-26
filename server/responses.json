@@ -1,0 +1,135 @@
+{
+    "fallback": "The embers crackle, yet I do not follow your meaning, traveler. Ask me of my conquests in the east, my faith in the White Christ, our Norse way of life, or the blood awaiting us in England.",
+    "topics": [
+        {
+            "id": "greeting",
+            "keywords": [
+                "hello",
+                "hi",
+                "greetings",
+                "who are you",
+                "name",
+                "harald",
+                "introduce",
+                "sit"
+            ],
+            "reply": "I am Harald Sigurdsson, King of Norway—though men call me Hardrada, the Hard Ruler. Pull your cloak tight against the night chill and ask what you will."
+        },
+        {
+            "id": "stiklestad_exile",
+            "keywords": [
+                "stiklestad",
+                "olaf",
+                "brother",
+                "exile",
+                "rus",
+                "kiev",
+                "yaroslav",
+                "young",
+                "youth"
+            ],
+            "reply": "I was only fifteen when I stood beside my half-brother King Olaf at Stiklestad in 1030. We fell to rebel spears that day, and I fled wounded east to the court of Grand Prince Yaroslav in Kiev. Exile in Rus forged the blade I became."
+        },
+        {
+            "id": "varangian_conquests",
+            "keywords": [
+                "varangian",
+                "byzantium",
+                "constantinople",
+                "miklagard",
+                "guard",
+                "emperor",
+                "sicily",
+                "bulgaria",
+                "conquest",
+                "conquests",
+                "battles",
+                "wars",
+                "gold",
+                "wealth"
+            ],
+            "reply": "From Miklagard—Constantinople—I led the Emperor's Varangian Guard across the world. We stormed Arab fortresses in Sicily, crushed rebellions in Bulgaria, and fought in the Holy Land. Every siege filled my chests with Byzantine gold, enough to buy a crown when I returned north."
+        },
+        {
+            "id": "norway_denmark_conquests",
+            "keywords": [
+                "norway",
+                "denmark",
+                "sweyn",
+                "magnus",
+                "oslo",
+                "hard ruler",
+                "hardrada",
+                "nickname",
+                "cruel",
+                "ruthless",
+                "jarls",
+                "rule"
+            ],
+            "reply": "When I came home, I shared Norway's throne with my nephew Magnus until his death left me sole king. For years I raided and burned Sweyn Estridsson's lands in Denmark, crushing every stubborn Norwegian jarl who dared defy my law. They call me Hardrada because I never bend."
+        },
+        {
+            "id": "christianity",
+            "keywords": [
+                "christian",
+                "christianity",
+                "church",
+                "christ",
+                "god",
+                "religion",
+                "faith",
+                "pagan",
+                "odin",
+                "thor",
+                "priest",
+                "bishop",
+                "saint"
+            ],
+            "reply": "My brother Olaf died for the White Christ and became Norway's patron saint, and I too rule as a Christian king—building stone churches and appointing bishops across my realm. Yet I answer to no archbishop in Bremen or Rome; in Norway, the church bends to the king's will, and the old warrior pride still runs deep in our blood."
+        },
+        {
+            "id": "viking_culture_daily_life",
+            "keywords": [
+                "viking",
+                "culture",
+                "daily life",
+                "live",
+                "home",
+                "farm",
+                "longhouse",
+                "ship",
+                "longship",
+                "food",
+                "feast",
+                "mead",
+                "skald",
+                "poetry",
+                "women",
+                "law",
+                "thing"
+            ],
+            "reply": "Men think we only swing axes, yet most of our days are spent coaxing barley and oats from rocky fjords, tending cattle, and shaping timber into clinker-built longships. In the smoky longhouse at night, we feast on salted fish, mutton, and honeyed mead while skalds recite our deeds in verse—and at the Thing assembly, free men settle feuds by law as often as by steel."
+        },
+        {
+            "id": "england_stamford_bridge",
+            "keywords": [
+                "england",
+                "english",
+                "throne",
+                "stamford",
+                "stamford bridge",
+                "godwinson",
+                "harold",
+                "tostig",
+                "1066",
+                "invasion",
+                "crown",
+                "york",
+                "fulford",
+                "die",
+                "death"
+            ],
+            "reply": "England's crown belongs to me by right of Magnus's pact, and Harold Godwinson is a usurper. With his exiled brother Tostig at my side and three hundred longships behind me, we crushed the northern earls at Fulford and took York. Now we wait near Stamford Bridge in the late September sun—let Godwinson march north if he dares; seven feet of English soil is all he will ever get from me."
+        }
+    ]
+}
