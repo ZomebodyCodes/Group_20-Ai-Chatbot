@@ -3,144 +3,301 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Responsive POV Background */
+/* Lock Harald and the campfire dead-center across the full screen */
 .bg-image {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
-  object-position: 50% 35%;
-  z-index: 1;
-  filter: brightness(0.75) contrast(1.1);
+  object-position: center center;
+  z-index: 0;
+  transition: opacity 0.4s ease;
 }
 
-/* Vignette & bottom fire-shadow so unboxed text is always legible */
+/* Dark vignette around the edges so centered text stays crisp */
 .shadow-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background:
-    radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.75) 100%),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 25%, rgba(0, 0, 0, 0.45) 55%, rgba(5, 3, 2, 0.94) 100%);
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center,
+      rgba(10, 6, 4, 0.25) 0%,
+      rgba(10, 6, 4, 0.78) 85%,
+      rgba(8, 5, 3, 0.94) 100%),
+    linear-gradient(to top,
+      rgba(8, 5, 3, 0.92) 0%,
+      rgba(8, 5, 3, 0.45) 45%,
+      rgba(8, 5, 3, 0.65) 100%);
+  z-index: 1;
   pointer-events: none;
 }
 
 .hud-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 28px 24px;
+  align-items: center;
+  padding: 24px 24px 32px;
 }
 
-/* Title Banner */
+/* Top Navigation & Audio Bar (Prevents Overlap on Any Screen Width) */
+.top-nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.top-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-rune-btn,
+.audio-toggle-btn {
+  position: static;
+  background: rgba(15, 10, 7, 0.55);
+  border: 1px solid rgba(209, 184, 148, 0.35);
+  color: #b89b78;
+  font-size: 0.92rem;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: 0 2px 6px #000;
+  transition: all 0.2s ease;
+}
+
+.nav-rune-btn:hover,
+.audio-toggle-btn:hover {
+  border-color: #e0682b;
+  color: #f5ead8;
+  text-shadow: 0 0 8px rgba(224, 104, 43, 0.6);
+}
+
+/* Top Centered Title */
 .clan-header {
   text-align: center;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 0 8px rgba(209, 90, 36, 0.4);
+  width: 100%;
 }
 
 .clan-header h1 {
-  font-family: 'VikingRune', sans-serif;
-  font-size: 2.3rem;
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  color: #f4ece1;
-  text-transform: uppercase;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #f5ead8;
+  letter-spacing: 0.14em;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.95), 0 0 24px rgba(224, 104, 43, 0.35);
 }
 
 .clan-header p {
-  font-family: 'VikingRune', sans-serif;
-  font-size: 0.95rem;
-  color: #b89b78;
-  letter-spacing: 0.12em;
+  font-size: 1.05rem;
+  color: #c9a87c;
+  letter-spacing: 0.16em;
   margin-top: 4px;
+  text-shadow: 0 2px 8px #000;
 }
 
-/* Boxless Foreground Stage */
-.dialogue-stage {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 720px;
-  display: flex;
-  flex-direction: column;
+/* Home Landing Page Centering & Button Spacing */
+.home-landing {
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 }
 
-/* Floating Typewriter Text */
-.dialogue-stream {
-  margin-bottom: 28px;
-  min-height: 110px;
+.landing-center {
+  width: 100%;
+  max-width: 660px;
+  margin: auto;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 32px;
+}
+
+.landing-intro {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.75;
+  color: #f5ead8;
+  text-shadow: 0 2px 10px #000;
+}
+
+.landing-actions {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.landing-primary-btn,
+.landing-actions .option-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  padding: 12px 24px;
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-shadow: 0 2px 8px #000;
+  transition: all 0.25s ease;
+}
+
+.landing-primary-btn {
+  background: rgba(224, 104, 43, 0.24);
+  border: 1px solid #e0682b;
+  color: #f5ead8;
+}
+
+.landing-primary-btn:hover {
+  background: rgba(224, 104, 43, 0.42);
+  box-shadow: 0 0 18px rgba(224, 104, 43, 0.45);
+}
+
+.landing-footer {
+  font-size: 0.85rem;
+  color: rgba(209, 184, 148, 0.55);
+  letter-spacing: 0.12em;
+}
+
+/* Center-Aligned Dialogue & Input Stage */
+.dialogue-stage {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Scrollable Chronicle Centered in the Lower Half */
+.dialogue-history {
+  width: 100%;
+  max-height: 38vh;
+  overflow-y: auto;
+  padding: 24px 16px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  cursor: pointer;
+
+  /* Soft fade at the top edge so scrolling history dissolves smoothly */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 22%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 22%, black 100%);
+}
+
+.dialogue-history::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dialogue-history::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dialogue-history::-webkit-scrollbar-thumb {
+  background: rgba(209, 184, 148, 0.3);
+  border-radius: 3px;
+}
+
+.dialogue-history::-webkit-scrollbar-thumb:hover {
+  background: #e0682b;
+}
+
+.dialogue-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.past-entry {
+  opacity: 0.6;
+}
+
+.past-entry:hover {
+  opacity: 0.95;
 }
 
 .npc-name {
-  font-family: 'VikingRune', sans-serif;
+  font-size: 1rem;
   color: #e0682b;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  text-shadow: 0 2px 8px #000, 0 0 12px rgba(224, 104, 43, 0.5);
+  text-shadow: 0 2px 8px #000;
 }
 
 .dialogue-text {
-  font-size: 1.35rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
   line-height: 1.65;
   color: #f5ead8;
-  text-shadow:
-    0 2px 4px #000,
-    0 0 14px rgba(0, 0, 0, 0.95),
-    0 0 25px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.98), 0 0 18px rgba(0, 0, 0, 0.85);
 }
 
-/* Blinking Rune Cursor while typing */
+.user-entry .npc-name {
+  color: #b89b78;
+  font-size: 0.9rem;
+}
+
+.user-entry .dialogue-text {
+  color: #d6c8b2;
+  font-size: 1.02rem;
+}
+
 .rune-cursor {
+  display: inline-block;
+  margin-left: 6px;
   color: #e0682b;
-  margin-left: 4px;
-  animation: flicker 0.8s infinite;
+  animation: pulseRune 0.9s infinite alternate;
 }
 
-@keyframes flicker {
+@keyframes pulseRune {
+  from {
+    opacity: 0.25;
+  }
 
-  0%,
-  100% {
+  to {
     opacity: 1;
   }
-
-  50% {
-    opacity: 0;
-  }
 }
 
-/* Minimalist Floating Input Line (No heavy box) */
+/* Centered Input Line & Quick Prompts */
 .interaction-area {
   width: 100%;
-  max-width: 580px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  gap: 14px;
 }
 
 .chat-input-line {
+  width: 100%;
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(209, 184, 148, 0.45);
-  padding-bottom: 6px;
-  transition: border-color 0.3s ease;
+  padding-bottom: 8px;
+  transition: border-color 0.25s ease;
 }
 
 .chat-input-line:focus-within {
@@ -153,10 +310,10 @@
   border: none;
   outline: none;
   color: #f5ead8;
-  font-family: 'VikingRune', sans-serif;
-  font-size: 1.1rem;
-  padding: 6px 8px;
-  text-shadow: 0 2px 6px #000;
+  font-size: 1.15rem;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 8px #000;
 }
 
 .chat-input-line input::placeholder {
@@ -167,93 +324,141 @@
   background: transparent;
   border: none;
   color: #e0682b;
-  font-family: 'VikingRune', sans-serif;
-  font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   letter-spacing: 0.12em;
-  padding: 6px 12px;
   cursor: pointer;
-  text-shadow: 0 2px 6px #000;
-  transition: transform 0.2s ease, text-shadow 0.2s ease;
+  padding: 4px 10px;
+  text-shadow: 0 2px 8px #000;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .send-btn:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 10px rgba(224, 104, 43, 0.8);
+  color: #ff8c4a;
+  transform: translateX(3px);
 }
 
-/* Subtle Whispered Prompts */
 .options-row {
   display: flex;
-  gap: 14px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }
 
 .option-btn {
-  background: transparent;
-  border: none;
-  color: #b59d7e;
-  font-family: 'VikingRune', sans-serif;
-  font-size: 0.92rem;
-  cursor: pointer;
-  padding: 4px 8px;
-  text-shadow: 0 2px 6px #000;
-  transition: color 0.2s ease;
-}
-
-.option-btn:hover {
-  color: #f5ead8;
-  text-shadow: 0 0 8px rgba(224, 104, 43, 0.6);
-}
-
-/* Mobile Scaling */
-@media (max-width: 600px) {
-  .hud-content {
-    padding: 20px 16px;
-  }
-
-  .clan-header h1 {
-    font-size: 1.65rem;
-    letter-spacing: 0.12em;
-  }
-
-  .dialogue-text {
-    font-size: 1.1rem;
-    line-height: 1.55;
-  }
-
-  .options-row {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-.audio-toggle-btn {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  background: transparent;
-  border: 1px solid rgba(209, 184, 148, 0.35);
-  color: #b89b78;
+  background: rgba(15, 10, 7, 0.45);
+  border: 1px solid rgba(209, 184, 148, 0.3);
+  color: #d6c8b2;
   font-size: 0.95rem;
-  letter-spacing: 0.1em;
-  padding: 6px 12px;
+  letter-spacing: 0.08em;
+  padding: 7px 14px;
   cursor: pointer;
   text-shadow: 0 2px 6px #000;
   transition: all 0.2s ease;
 }
 
-.audio-toggle-btn:hover {
+.option-btn:hover {
   border-color: #e0682b;
   color: #f5ead8;
-  text-shadow: 0 0 8px rgba(224, 104, 43, 0.6);
+  background: rgba(224, 104, 43, 0.15);
+}
+
+/* Inscribe Lore Page (/add-facts) */
+.lore-page {
+  overflow-y: auto;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.lore-stage {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-bottom: 32px;
+}
+
+.lore-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(12, 8, 6, 0.72);
+  border: 1px solid rgba(209, 184, 148, 0.28);
+  padding: 20px;
+}
+
+.lore-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #c9a87c;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+
+.lore-form input,
+.lore-form textarea {
+  background: rgba(8, 5, 3, 0.8);
+  border: 1px solid rgba(209, 184, 148, 0.35);
+  color: #f5ead8;
+  padding: 10px 12px;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  outline: none;
+}
+
+.lore-form input:focus,
+.lore-form textarea:focus {
+  border-color: #e0682b;
+}
+
+.submit-lore-btn {
+  align-self: flex-start;
+  color: #e0682b;
+  border-color: #e0682b;
+}
+
+.lore-status {
+  color: #e0682b;
+  font-size: 0.95rem;
+}
+
+.existing-topics {
+  background: rgba(12, 8, 6, 0.65);
+  border: 1px solid rgba(209, 184, 148, 0.22);
+  padding: 16px 20px;
+}
+
+.existing-topics h3 {
+  color: #f5ead8;
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+}
+
+.existing-topics ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 22vh;
+  overflow-y: auto;
+}
+
+.existing-topics li {
+  font-size: 0.9rem;
+  color: #d6c8b2;
+}
+
+.existing-topics li strong {
+  color: #e0682b;
 }
 
 @media (max-width: 600px) {
-  .audio-toggle-btn {
-    position: static;
-    margin-bottom: 10px;
-    font-size: 0.85rem;
+  .top-nav-bar {
+    justify-content: center;
+  }
+
+  .dialogue-history {
+    max-height: 32vh;
   }
 }

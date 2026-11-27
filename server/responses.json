@@ -1,5 +1,5 @@
 {
-    "fallback": "The embers crackle, yet I do not follow your meaning, traveler. Ask me of my conquests in the east, my faith in the White Christ, our Norse way of life, or the blood awaiting us in England.",
+    "fallback": "The embers crackle, yet I do not follow your meaning, traveler. Ask me of my years in Byzantium, my marriage to Elisiv, the founding of Oslo, our longships and gods, or the blood awaiting us in England.",
     "topics": [
         {
             "id": "greeting",
@@ -26,9 +26,32 @@
                 "kiev",
                 "yaroslav",
                 "young",
-                "youth"
+                "youth",
+                "1030"
             ],
             "reply": "I was only fifteen when I stood beside my half-brother King Olaf at Stiklestad in 1030. We fell to rebel spears that day, and I fled wounded east to the court of Grand Prince Yaroslav in Kiev. Exile in Rus forged the blade I became."
+        },
+        {
+            "id": "family_elisiv",
+            "keywords": [
+                "wife",
+                "elisiv",
+                "elisabeth",
+                "marriage",
+                "love",
+                "queen",
+                "children",
+                "daughters",
+                "sons",
+                "magnus",
+                "olav",
+                "family",
+                "father",
+                "mother",
+                "asta",
+                "sigurd"
+            ],
+            "reply": "In Kiev I composed sixteen verses for Yaroslav's daughter, Elisiv, though he refused my hand until I returned from Byzantium laden with eastern gold. She came north as my queen, and though I also took Thora Torbergsdatter to bind powerful Norwegian kin to my house, my sons Magnus and Olav carry the future of my bloodline."
         },
         {
             "id": "varangian_conquests",
@@ -46,9 +69,28 @@
                 "battles",
                 "wars",
                 "gold",
-                "wealth"
+                "wealth",
+                "jerusalem"
             ],
-            "reply": "From Miklagard—Constantinople—I led the Emperor's Varangian Guard across the world. We stormed Arab fortresses in Sicily, crushed rebellions in Bulgaria, and fought in the Holy Land. Every siege filled my chests with Byzantine gold, enough to buy a crown when I returned north."
+            "reply": "From Miklagard—Constantinople—I led the Emperor's Varangian Guard across the world. We stormed Arab fortresses in Sicily, crushed rebellions in Bulgaria, and marched to Jerusalem. Every siege filled my chests with Byzantine gold, enough to buy half a kingdom when I sailed home."
+        },
+        {
+            "id": "byzantine_escape",
+            "keywords": [
+                "escape",
+                "prison",
+                "dungeon",
+                "chain",
+                "chains",
+                "golden horn",
+                "zoe",
+                "monomachos",
+                "michael",
+                "blind",
+                "betrayal",
+                "betrayed"
+            ],
+            "reply": "When Emperor Michael died and Constantine Monomachos seized the purple, court intrigue landed me in a Byzantine dungeon over missing imperial plunder. Yet no Greek walls could hold a Northman—I broke free, blinded the treacherous emperor in the palace uprising, and rowed my longships straight over the harbor chain of the Golden Horn to escape."
         },
         {
             "id": "norway_denmark_conquests",
@@ -56,7 +98,6 @@
                 "norway",
                 "denmark",
                 "sweyn",
-                "magnus",
                 "oslo",
                 "hard ruler",
                 "hardrada",
@@ -64,9 +105,13 @@
                 "cruel",
                 "ruthless",
                 "jarls",
-                "rule"
+                "rule",
+                "city",
+                "capital",
+                "coin",
+                "silver"
             ],
-            "reply": "When I came home, I shared Norway's throne with my nephew Magnus until his death left me sole king. For years I raided and burned Sweyn Estridsson's lands in Denmark, crushing every stubborn Norwegian jarl who dared defy my law. They call me Hardrada because I never bend."
+            "reply": "When I came home, I shared Norway's throne with my nephew Magnus until his death left me sole king. I founded Oslo at the head of the fjord as a stronghold against Denmark, struck royal silver coinage to bind trade to my crown, and burned Sweyn Estridsson's Danish coasts year after year. They call me Hardrada because I never bend."
         },
         {
             "id": "christianity",
@@ -78,14 +123,76 @@
                 "god",
                 "religion",
                 "faith",
-                "pagan",
-                "odin",
-                "thor",
                 "priest",
                 "bishop",
-                "saint"
+                "saint",
+                "rome",
+                "bremen"
             ],
-            "reply": "My brother Olaf died for the White Christ and became Norway's patron saint, and I too rule as a Christian king—building stone churches and appointing bishops across my realm. Yet I answer to no archbishop in Bremen or Rome; in Norway, the church bends to the king's will, and the old warrior pride still runs deep in our blood."
+            "reply": "My brother Olaf died for the White Christ and became Norway's patron saint, and I too rule as a Christian king—building stone churches and appointing bishops across my realm. Yet I answer to no archbishop in Bremen or Rome; in Norway, the church bends to the king's will."
+        },
+        {
+            "id": "norse_gods_mythology",
+            "keywords": [
+                "odin",
+                "thor",
+                "freya",
+                "loki",
+                "valhalla",
+                "ragnarok",
+                "pagan",
+                "gods",
+                "mythology",
+                "runes",
+                "fate",
+                "wyrd",
+                "asgard",
+                "valkyrie"
+            ],
+            "reply": "Though priests chant Latin in our stone churches, every Northman still knows the old tales of Odin One-Eye, Thor's hammer, and the Valkyries who choose the slain for Valhalla. Even a baptized king respects fate—for no man lives a single winter past the thread the Norns have spun for him."
+        },
+        {
+            "id": "weapons_warfare",
+            "keywords": [
+                "weapon",
+                "weapons",
+                "sword",
+                "axe",
+                "dane axe",
+                "spear",
+                "shield",
+                "shield wall",
+                "armor",
+                "chainmail",
+                "mail",
+                "helmet",
+                "berserker",
+                "fight",
+                "fighting"
+            ],
+            "reply": "A Northman trusts his ash-shafted spear, his linden-wood round shield, and a two-handed Dane axe heavy enough to cleave horse and rider alike. Only jarls and kings afford full rings of iron mail and nasal helms. In battle we lock shields into an unbreakable wall, though a few wild-eyed ulfhednar and berserkers still howl ahead in wolf-skins like beasts."
+        },
+        {
+            "id": "longships_navigation",
+            "keywords": [
+                "ship",
+                "longship",
+                "ships",
+                "sail",
+                "sailing",
+                "sea",
+                "ocean",
+                "navigate",
+                "navigation",
+                "sunstone",
+                "compass",
+                "trade",
+                "vinland",
+                "iceland",
+                "greenland",
+                "explore"
+            ],
+            "reply": "Our clinker-built longships are the pride of the northern seas—flexible enough to ride Atlantic swells, yet shallow enough in the keel to slip up narrow rivers and beach on any shore. Without charts, we read the flight of sea-birds, the color of the currents, the pole star, and the sun's angle to reach Iceland, Greenland, and even distant Vinland."
         },
         {
             "id": "viking_culture_daily_life",
@@ -97,8 +204,6 @@
                 "home",
                 "farm",
                 "longhouse",
-                "ship",
-                "longship",
                 "food",
                 "feast",
                 "mead",
@@ -106,9 +211,11 @@
                 "poetry",
                 "women",
                 "law",
-                "thing"
+                "thing",
+                "grooming",
+                "comb"
             ],
-            "reply": "Men think we only swing axes, yet most of our days are spent coaxing barley and oats from rocky fjords, tending cattle, and shaping timber into clinker-built longships. In the smoky longhouse at night, we feast on salted fish, mutton, and honeyed mead while skalds recite our deeds in verse—and at the Thing assembly, free men settle feuds by law as often as by steel."
+            "reply": "Men think we only swing axes, yet most of our days are spent coaxing barley and oats from rocky fjords, tending cattle, and trading furs, amber, and walrus ivory. We bathe on Saturdays and comb our hair with bone combs, our women hold the keys to the household and own land, and at the Thing assembly free men settle feuds by law as often as by steel."
         },
         {
             "id": "england_stamford_bridge",
@@ -127,7 +234,8 @@
                 "york",
                 "fulford",
                 "die",
-                "death"
+                "death",
+                "seven feet"
             ],
             "reply": "England's crown belongs to me by right of Magnus's pact, and Harold Godwinson is a usurper. With his exiled brother Tostig at my side and three hundred longships behind me, we crushed the northern earls at Fulford and took York. Now we wait near Stamford Bridge in the late September sun—let Godwinson march north if he dares; seven feet of English soil is all he will ever get from me."
         }
