@@ -1,0 +1,254 @@
+{
+    "fallback": "The embers crackle, yet I do not follow your meaning, traveler. Ask me of my years in Byzantium, my marriage to Elisiv, the founding of Oslo, our longships and gods, or the blood awaiting us in England.",
+    "topics": [
+        {
+            "id": "greeting",
+            "keywords": [
+                "hello",
+                "hi",
+                "greetings",
+                "who are you",
+                "name",
+                "harald",
+                "introduce",
+                "sit"
+            ],
+            "reply": "I am Harald Sigurdsson, King of Norway—though men call me Hardrada, the Hard Ruler. Pull your cloak tight against the night chill and ask what you will."
+        },
+        {
+            "id": "stiklestad_exile",
+            "keywords": [
+                "stiklestad",
+                "olaf",
+                "brother",
+                "exile",
+                "rus",
+                "kiev",
+                "yaroslav",
+                "young",
+                "youth",
+                "1030"
+            ],
+            "reply": "I was only fifteen when I stood beside my half-brother King Olaf at Stiklestad in 1030. We fell to rebel spears that day, and I fled wounded east to the court of Grand Prince Yaroslav in Kiev. Exile in Rus forged the blade I became.",
+            "link": "https://www.britainuntold.co.uk/articles/harald-hardrada-the-viking-who-went-from-exile-to-emperors-guard"
+        },
+        {
+            "id": "family_elisiv",
+            "keywords": [
+                "wife",
+                "elisiv",
+                "elisabeth",
+                "marriage",
+                "love",
+                "queen",
+                "children",
+                "daughters",
+                "sons",
+                "magnus",
+                "olav",
+                "family",
+                "father",
+                "mother",
+                "asta",
+                "sigurd"
+            ],
+            "reply": "In Kiev I composed sixteen verses for Yaroslav's daughter, Elisiv, though he refused my hand until I returned from Byzantium laden with eastern gold. She came north as my queen, and though I also took Thora Torbergsdatter to bind powerful Norwegian kin to my house, my sons Magnus and Olav carry the future of my bloodline.",
+            "link": "https://en.wikipedia.org/wiki/Elisiv_of_Kiev"
+        },
+        {
+            "id": "varangian_conquests",
+            "keywords": [
+                "varangian",
+                "byzantium",
+                "constantinople",
+                "miklagard",
+                "guard",
+                "emperor",
+                "sicily",
+                "bulgaria",
+                "conquest",
+                "conquests",
+                "battles",
+                "wars",
+                "gold",
+                "wealth",
+                "jerusalem"
+            ],
+            "reply": "From Miklagard—Constantinople—I led the Emperor's Varangian Guard across the world. We stormed Arab fortresses in Sicily, crushed rebellions in Bulgaria, and marched to Jerusalem. Every siege filled my chests with Byzantine gold, enough to buy half a kingdom when I sailed home.",
+            "link": "https://www.ancient-origins.net/history-important-events/vikings-byzantium-varangians-and-their-fearless-conquests-003136"
+        },
+        {
+            "id": "byzantine_escape",
+            "keywords": [
+                "escape",
+                "prison",
+                "dungeon",
+                "chain",
+                "chains",
+                "golden horn",
+                "zoe",
+                "monomachos",
+                "michael",
+                "blind",
+                "betrayal",
+                "betrayed"
+            ],
+            "reply": "When Emperor Michael died and Constantine Monomachos seized the purple, court intrigue landed me in a Byzantine dungeon over missing imperial plunder. Yet no Greek walls could hold a Northman—I broke free, blinded the treacherous emperor in the palace uprising, and rowed my longships straight over the harbor chain of the Golden Horn to escape.",
+            "link": "https://story221.anybooks.vn/the-prisoner-who-escaped-constantinople-and-became-norways-greatest-warrior-harald-hardradas-road-from-captive-to-king-was-written-in-blood-and-courage-045/"
+        },
+        {
+            "id": "norway_denmark_conquests",
+            "keywords": [
+                "norway",
+                "denmark",
+                "sweyn",
+                "oslo",
+                "hard ruler",
+                "hardrada",
+                "nickname",
+                "cruel",
+                "ruthless",
+                "jarls",
+                "rule",
+                "city",
+                "capital",
+                "coin",
+                "silver"
+            ],
+            "reply": "When I came home, I shared Norway's throne with my nephew Magnus until his death left me sole king. I founded Oslo at the head of the fjord as a stronghold against Denmark, struck royal silver coinage to bind trade to my crown, and burned Sweyn Estridsson's Danish coasts year after year. They call me Hardrada because I never bend.",
+            "link": "https://en.wikipedia.org/wiki/Magnus_II_of_Norway"
+        },
+        {
+            "id": "christianity",
+            "keywords": [
+                "christian",
+                "christianity",
+                "church",
+                "christ",
+                "god",
+                "religion",
+                "faith",
+                "priest",
+                "bishop",
+                "saint",
+                "rome",
+                "bremen"
+            ],
+            "reply": "My brother Olaf died for the White Christ and became Norway's patron saint, and I too rule as a Christian king—building stone churches and appointing bishops across my realm. Yet I answer to no archbishop in Bremen or Rome; in Norway, the church bends to the king's will.",
+            "link": "https://vikinganswerlady.com/hvitkrst.shtml"
+        },
+        {
+            "id": "norse_gods_mythology",
+            "keywords": [
+                "odin",
+                "thor",
+                "freya",
+                "loki",
+                "valhalla",
+                "ragnarok",
+                "pagan",
+                "gods",
+                "mythology",
+                "runes",
+                "fate",
+                "wyrd",
+                "asgard",
+                "valkyrie"
+            ],
+            "reply": "Though priests chant Latin in our stone churches, every Northman still knows the old tales of Odin One-Eye, Thor's hammer, and the Valkyries who choose the slain for Valhalla. Even a baptized king respects fate—for no man lives a single winter past the thread the Norns have spun for him.",
+            "link": "https://www.lifeinnorway.net/norse-mythology/"
+        },
+        {
+            "id": "weapons_warfare",
+            "keywords": [
+                "weapon",
+                "weapons",
+                "sword",
+                "axe",
+                "dane axe",
+                "spear",
+                "shield",
+                "shield wall",
+                "armor",
+                "chainmail",
+                "mail",
+                "helmet",
+                "berserker",
+                "fight",
+                "fighting"
+            ],
+            "reply": "A Northman trusts his ash-shafted spear, his linden-wood round shield, and a two-handed Dane axe heavy enough to cleave horse and rider alike. Only jarls and kings afford full rings of iron mail and nasal helms. In battle we lock shields into an unbreakable wall, though a few wild-eyed ulfhednar and berserkers still howl ahead in wolf-skins like beasts.",
+            "link": "https://thevikingherald.com/article/a-complete-guide-to-viking-weaponry/418"
+        },
+        {
+            "id": "longships_navigation",
+            "keywords": [
+                "ship",
+                "longship",
+                "ships",
+                "sail",
+                "sailing",
+                "sea",
+                "ocean",
+                "navigate",
+                "navigation",
+                "sunstone",
+                "compass",
+                "trade",
+                "vinland",
+                "iceland",
+                "greenland",
+                "explore"
+            ],
+            "reply": "Our clinker-built longships are the pride of the northern seas—flexible enough to ride Atlantic swells, yet shallow enough in the keel to slip up narrow rivers and beach on any shore. Without charts, we read the flight of sea-birds, the color of the currents, the pole star, and the sun's angle to reach Iceland, Greenland, and even distant Vinland.",
+            "link": "https://en.wikipedia.org/wiki/Longship"
+        },
+        {
+            "id": "viking_culture_daily_life",
+            "keywords": [
+                "viking",
+                "culture",
+                "daily life",
+                "live",
+                "home",
+                "farm",
+                "longhouse",
+                "food",
+                "feast",
+                "mead",
+                "skald",
+                "poetry",
+                "women",
+                "law",
+                "thing",
+                "grooming",
+                "comb"
+            ],
+            "reply": "Men think we only swing axes, yet most of our days are spent coaxing barley and oats from rocky fjords, tending cattle, and trading furs, amber, and walrus ivory. We bathe on Saturdays and comb our hair with bone combs, our women hold the keys to the household and own land, and at the Thing assembly free men settle feuds by law as often as by steel.",
+            "link": "https://vikingsrule.com/category/culture-daily-life/"
+        },
+        {
+            "id": "england_stamford_bridge",
+            "keywords": [
+                "england",
+                "english",
+                "throne",
+                "stamford",
+                "stamford bridge",
+                "godwinson",
+                "harold",
+                "tostig",
+                "1066",
+                "invasion",
+                "crown",
+                "york",
+                "fulford",
+                "die",
+                "death",
+                "seven feet"
+            ],
+            "reply": "England's crown belongs to me by right of Magnus's pact, and Harold Godwinson is a usurper. With his exiled brother Tostig at my side and three hundred longships behind me, we crushed the northern earls at Fulford and took York. Now we wait near Stamford Bridge in the late September sun—let Godwinson march north if he dares; seven feet of English soil is all he will ever get from me.",
+            "link": "https://www.britannica.com/event/Battle-of-Stamford-Bridge"
+        }
+    ]
+}
