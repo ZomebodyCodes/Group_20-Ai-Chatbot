@@ -130,7 +130,12 @@ export default function ChatPage() {
             setBgImage(topicBackgrounds[data.matchedTopic] || '/campfire-bg.png');
             setMessages((prev) => [
                 ...prev,
-                { sender: 'harald', text: data.reply || "The fire crackles, yet no words come." }
+                {
+                    sender: 'harald',
+                    text: data.reply || "The fire crackles, yet no words come.",
+                    link: data.link || null,
+                    linkLabel: data.linkLabel || null,
+                }
             ]);
         } catch (error) {
             console.error('Error talking to server:', error);
@@ -175,64 +180,73 @@ export default function ChatPage() {
                         </div>
                     </div>
 
-                    <h1>Harald Hardrada</h1>
-                    <p>ᛟ King of Norway • AD 1066 ᛟ</p>
                 </header>
 
-                <div className="dialogue-stage">
-                    <div className="dialogue-history" onClick={handleSkipTypewriter}>
-                        {messages.map((msg, idx) => {
-                            const isLast = idx === messages.length - 1;
-                            const textToRender = isLast ? displayedText : msg.text;
+                <div className="dialogue-history" onClick={handleSkipTypewriter}>
+                    {messages.map((msg, idx) => {
+                        const isLast = idx === messages.length - 1;
+                        const textToRender = isLast ? displayedText : msg.text;
 
-                            return (
-                                <div
-                                    key={idx}
-                                    className={`dialogue-entry ${msg.sender === 'user' ? 'user-entry' : 'harald-entry'} ${!isLast ? 'past-entry' : ''}`}
-                                >
-                                    <div className="npc-name">
-                                        {msg.sender === 'user' ? 'ᛉ Traveler' : 'Harald'}
-                                    </div>
-                                    <p className="dialogue-text">
-                                        "{textToRender}"
-                                        {isLast && isTyping && msg.sender === 'harald' && (
-                                            <span className="rune-cursor">ᛉ</span>
-                                        )}
-                                    </p>
+                        return (
+                            <div
+                                key={idx}
+                                className={`dialogue-entry ${msg.sender === 'user' ? 'user-entry' : 'harald-entry'} ${!isLast ? 'past-entry' : ''}`}
+                            >
+                                <div className="npc-name">
+                                    {msg.sender === 'user' ? 'ᛉ Traveler' : 'Harald'}
                                 </div>
-                            );
-                        })}
-                        <div ref={streamEndRef} />
-                    </div>
+                                <p className="dialogue-text">
+                                    "{textToRender}"
+                                    {isLast && isTyping && msg.sender === 'harald' && (
+                                        <span className="rune-cursor">ᛉ</span>
+                                    )}
+                                </p>
 
-                    <div className="interaction-area">
-                        <form onSubmit={handleSend} className="chat-input-line">
-                            <input
-                                type="text"
-                                placeholder="Speak into the firelight..."
-                                value={inputValue}
-                                onChange={(e) => setInputValue(e.target.value)}
-                            />
-                            <button type="submit" className="send-btn">
-                                Speak ᛉ
+                                {msg.link && (!isLast || !isTyping) && (
+                                    <a
+                                        href={msg.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="chronicle-source-link"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        ᛟ {msg.linkLabel || "Consult Historical Chronicle"} ↗
+                                    </a>
+                                )}
+                            </div>
+                        );
+                    })}
+                    <div ref={streamEndRef} />
+                </div>
+
+                <div className="interaction-area">
+                    <form onSubmit={handleSend} className="chat-input-line">
+                        <input
+                            type="text"
+                            placeholder="Speak into the firelight..."
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                        />
+                        <button type="submit" className="send-btn">
+                            Speak ᛉ
+                        </button>
+                    </form>
+
+                    <div className="options-row">
+                        {quickPrompts.map((prompt, idx) => (
+                            <button
+                                key={idx}
+                                type="button"
+                                className="option-btn"
+                                onClick={() => setInputValue(prompt.replace(/^[^\w]+/, ''))}
+                            >
+                                {prompt}
                             </button>
-                        </form>
-
-                        <div className="options-row">
-                            {quickPrompts.map((prompt, idx) => (
-                                <button
-                                    key={idx}
-                                    type="button"
-                                    className="option-btn"
-                                    onClick={() => setInputValue(prompt.replace(/^[^\w]+/, ''))}
-                                >
-                                    {prompt}
-                                </button>
-                            ))}
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
         </div>
+        </div >
     );
 }

@@ -462,3 +462,128 @@
     max-height: 32vh;
   }
 }
+
+/* Scrollable Home Page Chronicle */
+.home-scroll-page {
+  overflow-y: auto;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 40px;
+}
+
+.home-main {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.hero-panel {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  padding: 24px 20px;
+  background: rgba(12, 8, 6, 0.58);
+  border: 1px solid rgba(209, 184, 148, 0.28);
+}
+
+.chronicle-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.section-rune-title {
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  color: #e0682b;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-shadow: 0 2px 10px #000;
+}
+
+.features-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.facts-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.saga-card {
+  background: rgba(12, 8, 6, 0.72);
+  border: 1px solid rgba(209, 184, 148, 0.26);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.saga-card:hover {
+  border-color: #e0682b;
+  transform: translateY(-2px);
+}
+
+.card-rune {
+  font-size: 1.4rem;
+  color: #e0682b;
+}
+
+.fact-era {
+  font-size: 0.82rem;
+  color: #c9a87c;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.saga-card h3 {
+  font-size: 1.15rem;
+  color: #f5ead8;
+  letter-spacing: 0.08em;
+}
+
+.saga-card p {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: #d6c8b2;
+}
+
+.chronicle-source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 5px 14px;
+  background: rgba(15, 10, 7, 0.65);
+  border: 1px solid rgba(224, 104, 43, 0.45);
+  color: #e0682b;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-shadow: 0 2px 6px #000;
+  transition: all 0.2s ease;
+}
+
+.chronicle-source-link:hover {
+  background: rgba(224, 104, 43, 0.2);
+  border-color: #e0682b;
+  color: #f5ead8;
+  box-shadow: 0 0 12px rgba(224, 104, 43, 0.35);
+}
